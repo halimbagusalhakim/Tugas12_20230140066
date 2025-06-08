@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Registrasi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fade-in 0.3s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 min-h-screen flex items-center justify-center p-4 relative">
+
+  <!-- Notifikasi Berhasil -->
+  <div id="successNotification" class="fixed top-4 right-4 z-50 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center space-x-2 animate-fade-in hidden">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>
+    <span>Registrasi berhasil!</span>
+  </div>
+
+  <!-- Container -->
+  <div class="relative w-full max-w-md">
+    <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-8 space-y-6">
+
+      <div class="text-center space-y-2">
+        <h1 class="text-3xl font-bold text-white">Registrasi</h1>
+        <p class="text-white/70">Silakan isi data Anda</p>
+      </div>
+
+      <!-- Form -->
+      <div class="space-y-4">
+        
+        <!-- Nama -->
+        <div>
+          <label class="text-white text-sm font-medium">Nama</label>
+          <input type="text" id="nama" placeholder="Masukkan nama lengkap"
+            class="w-full px-4 py-2 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/50 focus:ring-2 focus:ring-blue-400" />
+        </div>
+
+        <!-- NIM -->
+        <div>
+          <label class="text-white text-sm font-medium">NIM</label>
+          <input type="text" id="nim" placeholder="2000140141"
+            class="w-full px-4 py-2 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/50 focus:ring-2 focus:ring-blue-400" />
+        </div>
+
+        <!-- Peminatan -->
+        <div>
+          <label class="text-white text-sm font-medium">Peminatan pada bidang:</label>
+          <div class="space-y-2 mt-1">
+            <label class="flex items-center space-x-2 text-white"><input type="radio" name="bidang" value="Programming" /> <span>Programming</span></label>
+            <label class="flex items-center space-x-2 text-white"><input type="radio" name="bidang" value="Desain" /> <span>Desain</span></label>
+            <label class="flex items-center space-x-2 text-white"><input type="radio" name="bidang" value="Jaringan" /> <span>Jaringan</span></label>
+            <label class="flex items-center space-x-2 text-white"><input type="radio" name="bidang" value="Data" /> <span>Data</span></label>
+          </div>
+        </div>
+
+        <!-- Alamat -->
+        <div>
+          <label class="text-white text-sm font-medium">Alamat</label>
+          <input type="text" id="alamat" placeholder="Jalan Jalan ke Jakarta"
+            class="w-full px-4 py-2 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/50 focus:ring-2 focus:ring-blue-400" />
+        </div>
+
+        <!-- Dropdown Angkatan -->
+        <div>
+          <label class="text-white text-sm font-medium">Pilih Angkatan</label>
+          <select
+            id="angkatan"
+            class="w-full bg-purple-800 text-white border border-purple-500 rounded px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-purple-400 appearance-none"
+          >
+            <option value="">-- Pilih --</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+          </select>
+        </div>
+
+        <!-- Tanggal -->
+        <div>
+          <label class="text-white text-sm font-medium">Tanggal</label>
+          <input type="date" id="tanggal"
+            class="w-full px-4 py-2 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/50 focus:ring-2 focus:ring-blue-400" />
+        </div>
+
+        <!-- Tombol Submit -->
+        <button id="submitBtn"
+          class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 rounded-xl transition-all">
+          Kirim
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
